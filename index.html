@@ -3,61 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte: Futuro Sustentável</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Agro Forte | Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">AgroSustentável</div>
-            <ul class="nav-links">
+        <nav class="navbar">
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <ul class="nav-menu">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Equilíbrio</a></li>
-                <li><a href="#contato">Engajamento</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><button id="theme-btn">Alternar Tema</button></li>
             </ul>
-            <button id="theme-toggle" title="Alternar Modo Escuro">🌓</button>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="hero">
-            <div class="hero-content">
-                <h1 id="welcome-text">Produzir para Alimentar, Preservar para Durar</h1>
-                <p>O equilíbrio entre a tecnologia do campo e a biodiversidade.</p>
-                <div class="user-area">
-                    <input type="text" id="user-name" placeholder="Digite seu nome">
-                    <button id="btn-welcome">Personalizar</button>
+            <div class="container">
+                <h1 id="main-title">Agro Forte: Equilíbrio é o Futuro</h1>
+                <p>Tecnologia e preservação ambiental em harmonia para alimentar o mundo.</p>
+                <div class="interactive-box">
+                    <input type="text" id="input-nome" placeholder="Digite seu nome...">
+                    <button id="btn-interagir">Personalizar</button>
                 </div>
             </div>
         </section>
 
-        <section id="sobre" class="features">
-            <div class="card">
-                <h3>Tecnologia Verde</h3>
-                <p>Otimização de recursos via IA para reduzir desperdícios.</p>
-            </div>
-            <div class="card">
-                <h3>Preservação</h3>
-                <p>Sistemas integrados que recuperam o solo e as águas.</p>
+        <section id="sobre" class="content-section">
+            <div class="grid">
+                <div class="card">
+                    <h3>Produção Consciente</h3>
+                    <p>Uso de drones e IA para reduzir o consumo de água e defensivos.</p>
+                </div>
+                <div class="card">
+                    <h3>Preservação Ativa</h3>
+                    <p>Respeito às áreas de reserva e recuperação de nascentes.</p>
+                </div>
             </div>
         </section>
 
         <section id="contato" class="form-section">
-            <div id="form-container">
-                <h2>Faça parte do amanhã</h2>
-                <form id="contact-form">
-                    <input type="email" id="email" required placeholder="seu@email.com">
-                    <button type="submit" class="btn-submit">Assinar</button>
-                </form>
-            </div>
-            <p id="form-feedback" class="hidden">Obrigado! Inscrição realizada com sucesso.</p>
+            <form id="meu-formulario">
+                <h3>Receba novidades sustentáveis</h3>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="mensagem-sucesso" class="hidden">✓ Cadastro realizado com sucesso!</div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Projeto Agrinho | Sustentabilidade e Inovação</p>
+        <p>Projeto Agrinho 2026 - Sustentabilidade no Campo</p>
     </footer>
 
-    <script src="./js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
