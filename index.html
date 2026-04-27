@@ -12,49 +12,88 @@
             <div class="logo">Agro<span>Sustentável</span></div>
             <ul class="nav-menu">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><button id="theme-btn">Alternar Tema</button></li>
+                <li><a href="#pilares">Pilares</a></li>
+                <li><a href="#biblioteca">Biblioteca</a></li>
+                <li><button id="theme-btn" title="Alternar Modo Escuro">🌓</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="hero">
-            <div class="container">
-                <h1 id="main-title">Agro Forte: Equilíbrio é o Futuro</h1>
-                <p>Tecnologia e preservação ambiental em harmonia para alimentar o mundo.</p>
+            <div class="hero-overlay">
+                <h1 id="main-title">Agro Forte: Equilíbrio que Alimenta</h1>
+                <p>A tecnologia brasileira liderando a preservação ambiental no campo.</p>
                 <div class="interactive-box">
-                    <input type="text" id="input-nome" placeholder="Digite seu nome...">
-                    <button id="btn-interagir">Personalizar</button>
+                    <input type="text" id="input-nome" placeholder="Seu nome aqui...">
+                    <button id="btn-interagir">Personalizar Experiência</button>
                 </div>
             </div>
         </section>
 
-        <section id="sobre" class="content-section">
+        <section id="pilares" class="section">
+            <h2 class="section-title">O Triângulo da Sustentabilidade</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Produção Consciente</h3>
-                    <p>Uso de drones e IA para reduzir o consumo de água e defensivos.</p>
+                    <h3>Preservação Ativa</h3>
+                    <p>O Código Florestal Brasileiro exige que propriedades rurais mantenham áreas de Reserva Legal. O agro forte protege as nascentes.</p>
                 </div>
                 <div class="card">
-                    <h3>Preservação Ativa</h3>
-                    <p>Respeito às áreas de reserva e recuperação de nascentes.</p>
+                    <h3>Tecnologia de Precisão</h3>
+                    <p>Drones e sensores reduzem em até 40% o uso de defensivos, aplicando-os apenas onde há necessidade real.</p>
+                </div>
+                <div class="card">
+                    <h3>Segurança Alimentar</h3>
+                    <p>Produzir mais em menos espaço é a chave para evitar o desmatamento e alimentar a população crescente.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contato" class="form-section">
-            <form id="meu-formulario">
-                <h3>Receba novidades sustentáveis</h3>
-                <input type="email" id="email" placeholder="seu@email.com" required>
-                <button type="submit">Enviar</button>
-            </form>
-            <div id="mensagem-sucesso" class="hidden">✓ Cadastro realizado com sucesso!</div>
+        <section id="biblioteca" class="section bg-light">
+            <h2 class="section-title">Biblioteca do Futuro</h2>
+            <p class="subtitle">Aprofunde seus conhecimentos com fontes oficiais e científicas.</p>
+            
+            <div class="resources-container">
+                <div class="resource-column">
+                    <h3>📑 Artigos e Matérias</h3>
+                    <ul class="link-list">
+                        <li><a href="https://www.embrapa.br/tema-agricultura-sustentavel" target="_blank">Embrapa: Tudo sobre Agricultura Sustentável</a></li>
+                        <li><a href="https://www.cnabrasil.org.br/noticias/agro-sustentavel-brasileiro-e-referencia-mundial" target="_blank">CNA: O Agro Brasileiro como Referência Mundial</a></li>
+                        <li><a href="https://brasilescola.uol.com.br/geografia/agricultura-sustentavel.htm" target="_blank">Brasil Escola: Conceitos de Sustentabilidade no Campo</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-column">
+                    <h3>🎥 Vídeos e Documentários</h3>
+                    <ul class="link-list">
+                        <li><a href="https://www.youtube.com/watch?v=kY67l0nshZ8" target="_blank">Documentário: O Futuro da Agricultura (YouTube)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=FjI5jY7Mv-M" target="_blank">Tecnologias que mudaram o Campo - Canal Rural</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=uD5uW6-gQ6M" target="_blank">Embrapa: ILPF (Integração Lavoura-Pecuária-Floresta)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section">
+            <div class="form-card">
+                <form id="meu-formulario">
+                    <h3>Receba Materiais Educativos</h3>
+                    <div class="form-group">
+                        <label for="email">E-mail Acadêmico/Pessoal</label>
+                        <input type="email" id="email" required placeholder="exemplo@email.com">
+                    </div>
+                    <button type="submit" class="btn-submit">Assinar Boletim Agrinho</button>
+                </form>
+                <div id="mensagem-sucesso" class="hidden">
+                    <p>🎉 <strong>Sucesso!</strong> O guia de Sustentabilidade foi enviado para o seu e-mail.</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Projeto Agrinho 2026 - Sustentabilidade no Campo</p>
+        <p>&copy; 2026 - Projeto Agro Forte Futuro Sustentável</p>
+        <p><small>Criado com auxílio de: Canva (Imagens), Piskel (Ícones) e Gemini (Suporte em Código).</small></p>
     </footer>
 
     <script src="script.js"></script>
