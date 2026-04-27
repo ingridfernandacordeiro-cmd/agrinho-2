@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte: Futuro Sustentável</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
                 <li><a href="#sobre">Equilíbrio</a></li>
                 <li><a href="#contato">Engajamento</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Alternar modo escuro">🌓</button>
+            <button id="theme-toggle" title="Alternar Modo Escuro">🌓</button>
         </nav>
     </header>
 
@@ -23,42 +23,41 @@
         <section id="inicio" class="hero">
             <div class="hero-content">
                 <h1 id="welcome-text">Produzir para Alimentar, Preservar para Durar</h1>
-                <p>O equilíbrio perfeito entre a tecnologia do campo e a proteção da biodiversidade.</p>
+                <p>O equilíbrio entre a tecnologia do campo e a biodiversidade.</p>
                 <div class="user-area">
-                    <input type="text" id="user-name" placeholder="Seu nome">
-                    <button id="btn-welcome">Personalizar Experiência</button>
+                    <input type="text" id="user-name" placeholder="Digite seu nome">
+                    <button id="btn-welcome">Personalizar</button>
                 </div>
             </div>
         </section>
 
         <section id="sobre" class="features">
-            <div class="card" id="card-1">
-                <h3>Tecnologia de Precisão</h3>
-                <p>Otimização de recursos e redução de desperdícios através de dados.</p>
+            <div class="card">
+                <h3>Tecnologia Verde</h3>
+                <p>Otimização de recursos via IA para reduzir desperdícios.</p>
             </div>
-            <div class="card" id="card-2">
-                <h3>Reflorestamento</h3>
-                <p>Integração lavoura-pecuária-floresta para solos mais ricos.</p>
+            <div class="card">
+                <h3>Preservação</h3>
+                <p>Sistemas integrados que recuperam o solo e as águas.</p>
             </div>
         </section>
 
-        <section id="contato">
-            <div class="form-container">
+        <section id="contato" class="form-section">
+            <div id="form-container">
                 <h2>Faça parte do amanhã</h2>
                 <form id="contact-form">
-                    <label for="email">E-mail para novidades:</label>
                     <input type="email" id="email" required placeholder="seu@email.com">
-                    <button type="submit" class="btn-submit">Assinar Boletim</button>
+                    <button type="submit" class="btn-submit">Assinar</button>
                 </form>
-                <p id="form-feedback" class="hidden">Obrigado por se juntar à causa!</p>
             </div>
+            <p id="form-feedback" class="hidden">Obrigado! Inscrição realizada com sucesso.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Projeto Agrinho - Identidade Visual Criada no Canva & Piskel</p>
+        <p>&copy; 2026 Projeto Agrinho | Sustentabilidade e Inovação</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
