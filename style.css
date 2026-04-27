@@ -1,88 +1,56 @@
+/* Variáveis de Cores */
 :root {
+    --primary: #1b5e20;
+    --secondary: #4caf50;
     --bg: #ffffff;
-    --text: #1a1a1a;
-    --primary: #2e7d32;
-    --accent: #81c784;
-    --card-bg: #f9f9f9;
+    --text: #333333;
+    --light-grey: #f4f4f9;
 }
 
-/* Classe aplicada pelo JavaScript */
 body.dark-mode {
     --bg: #121212;
     --text: #f0f0f0;
-    --primary: #4caf50;
-    --card-bg: #1e1e1e;
+    --primary: #81c784;
+    --light-grey: #1e1e1e;
 }
 
-body {
-    background-color: var(--bg);
-    color: var(--text);
-    margin: 0;
-    font-family: sans-serif;
-    transition: background 0.4s ease;
-}
+/* Geral */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); transition: 0.3s; }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 5%;
-    background: var(--primary);
-    color: white;
-}
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: var(--primary); color: white; position: sticky; top: 0; z-index: 10; }
+.nav-menu { display: flex; list-style: none; gap: 20px; align-items: center; }
+.nav-menu a { color: white; text-decoration: none; font-weight: bold; }
+.nav-menu a:hover { color: var(--secondary); }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    align-items: center;
-}
+/* Hero */
+.hero { height: 70vh; background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000') center/cover; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+.hero-overlay { background: rgba(0, 0, 0, 0.5); padding: 40px; border-radius: 15px; }
 
-.hero {
-    padding: 100px 10%;
-    text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1000');
-    background-size: cover;
-    color: white;
-}
+/* Seções */
+.section { padding: 60px 10%; text-align: center; }
+.bg-light { background-color: var(--light-grey); }
+.section-title { margin-bottom: 30px; font-size: 2.5rem; color: var(--primary); }
 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 50px 5%;
-    justify-content: center;
-}
+/* Grid e Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.card { background: var(--light-grey); padding: 30px; border-radius: 10px; border-bottom: 5px solid var(--primary); transition: 0.3s; }
+.card:hover { transform: translateY(-10px); background: #e8f5e9; }
 
-.card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
+/* Biblioteca de Links */
+.resources-container { display: flex; flex-wrap: wrap; gap: 40px; text-align: left; margin-top: 30px; }
+.resource-column { flex: 1; min-width: 300px; }
+.link-list { list-style: none; margin-top: 15px; }
+.link-list li { margin-bottom: 12px; }
+.link-list a { color: var(--primary); text-decoration: none; font-weight: 500; border-left: 3px solid var(--primary); padding-left: 10px; }
+.link-list a:hover { color: var(--secondary); padding-left: 15px; transition: 0.2s; }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-top: 4px solid var(--primary);
-}
+/* Formulário */
+.form-card { max-width: 500px; margin: 0 auto; background: var(--light-grey); padding: 30px; border-radius: 15px; }
+.form-group { margin-bottom: 20px; text-align: left; }
+input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; margin-top: 5px; }
+.btn-submit { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; }
 
 .hidden { display: none; }
-
-button {
-    cursor: pointer;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background: var(--primary);
-    color: white;
-    transition: opacity 0.2s;
-}
-
-button:hover { opacity: 0.8; }
-
-/* Responsividade */
-@media (max-width: 600px) {
-    .nav-menu { display: none; } /* Simplificação para mobile */
-    .hero h1 { font-size: 1.5rem; }
-}
+footer { padding: 40px; text-align: center; background: #333; color: white; }
