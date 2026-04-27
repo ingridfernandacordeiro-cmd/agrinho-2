@@ -1,36 +1,46 @@
-// 1. Armazenamento de variáveis e manipulação do DOM
-const btnWelcome = document.getElementById('btn-welcome');
-const welcomeText = document.getElementById('welcome-text');
-const userNameInput = document.getElementById('user-name');
-const themeToggle = document.getElementById('theme-toggle');
-const contactForm = document.getElementById('contact-form');
-const feedback = document.getElementById('form-feedback');
-
-// Função para personalizar a saudação
-btnWelcome.addEventListener('click', () => {
-    const name = userNameInput.value;
-    if (name) {
-        // Altera o conteúdo HTML dinamicamente
-        welcomeText.innerText = `Olá, ${name}! Vamos cultivar o futuro juntos?`;
-        userNameInput.style.display = 'none';
-        btnWelcome.style.display = 'none';
-    }
-});
-
-// Função para alternar entre modo claro e escuro
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    // Efeito visual simples no botão
-    themeToggle.style.transform = 'scale(1.2)';
-    setTimeout(() => themeToggle.style.transform = 'scale(1)', 200);
-});
-
-// Manipulação de formulário
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Impede o recarregamento da página
-    contactForm.classList.add('hidden');
-    feedback.classList.remove('hidden');
+// Aguarda o carregamento do HTML para não dar erro de "null"
+document.addEventListener('DOMContentLoaded', () => {
     
-    // Log de feedback no console (Critério de erro 0)
-    console.log("Inscrição realizada com sucesso!");
+    // 1. Variáveis para armazenar elementos
+    const btnInteragir = document.getElementById('btn-interagir');
+    const inputNome = document.getElementById('input-nome');
+    const tituloPrincipal = document.getElementById('main-title');
+    const themeBtn = document.getElementById('theme-btn');
+    const form = document.getElementById('meu-formulario');
+    const msgSucesso = document.getElementById('mensagem-sucesso');
+
+    // 2. Função de Personalização (Manipulação de Texto)
+    btnInteragir.addEventListener('click', () => {
+        const nomeUsuario = inputNome.value.trim();
+        
+        if(nomeUsuario !== "") {
+            // Processa a informação antes de exibir
+            const saudacao = `Bem-vindo, ${nomeUsuario}!`;
+            tituloPrincipal.innerText = saudacao;
+            inputNome.style.display = 'none';
+            btnInteragir.innerText = "Nome Registrado ✓";
+        } else {
+            alert("Por favor, digite seu nome para personalizar o site.");
+        }
+    });
+
+    // 3. Função de Modo Escuro (Manipulação de CSS via JS)
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        // Altera o texto do botão dinamicamente
+        if(document.body.classList.contains('dark-mode')) {
+            themeBtn.innerText = "Modo Claro";
+        } else {
+            themeBtn.innerText = "Modo Escuro";
+        }
+    });
+
+    // 4. Manipulação de Formulário
+    form.addEventListener('submit', (evento) => {
+        evento.preventDefault(); // Evita que a página recarregue
+        form.classList.add('hidden'); // Esconde o formulário
+        msgSucesso.classList.remove('hidden'); // Mostra a div de sucesso
+        console.log("Formulário enviado com sucesso!");
+    });
+
 });
