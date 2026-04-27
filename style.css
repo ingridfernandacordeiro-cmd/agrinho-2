@@ -1,0 +1,102 @@
+:root {
+    --primary: #2d5a27;
+    --secondary: #8bc34a;
+    --dark: #1a1a1a;
+    --light: #f4f4f4;
+    --transition: all 0.3s ease;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+    --primary: #8bc34a;
+    --light: #1a1a1a;
+    --dark: #f4f4f4;
+    background-color: #121212;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    transition: var(--transition);
+}
+
+header {
+    background: var(--primary);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+    transition: var(--transition);
+}
+
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/img/hero-bg.jpg'); /* Adicione sua imagem aqui */
+    background-size: cover;
+    color: white;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 5%;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+    max-width: 400px;
+    transition: transform 0.3s;
+    color: #333;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-bottom: 5px solid var(--secondary);
+}
+
+.hidden { display: none; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 1.5rem; }
+}
