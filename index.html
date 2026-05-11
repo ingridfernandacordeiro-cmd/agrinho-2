@@ -1,128 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Agrinho - Inovação e Saber</title>
-    <style>
-        /* CSS Integrado para facilitar */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            background-color: #2e7d32;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .secao-info {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .secao-info img {
-            width: 400px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-texto {
-            padding: 15px;
-        }
-
-        .card-texto h3 {
-            color: #2e7d32;
-            margin-top: 0;
-        }
-
-        @media (max-width: 768px) {
-            .secao-info { flex-direction: column; text-align: center; }
-            .secao-info img { width: 100%; }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Programa Agrinho</h1>
-    <p>Educação que transforma o campo e a cidade</p>
-</header>
-
-<div class="container">
-    
-    <section class="secao-info">
-        <div class="texto">
-            <h2>O que é o Programa?</h2>
-            <p>O <strong>Agrinho</strong> é o maior programa de responsabilidade social do Sistema FAEP/SENAR-PR. Há mais de 25 anos, ele leva informações sobre saúde, segurança pessoal e ambiental a milhares de crianças no Paraná.</p>
-            <p>O objetivo é formar cidadãos conscientes, que entendam a importância do agronegócio para a economia e o papel fundamental da preservação ambiental para o nosso futuro.</p>
-        </div>
-        <img src="https://www.sistemafaep.org.br/wp-content/uploads/2023/10/Agrinho-2023-Premicao-1.jpg" alt="Premiação Agrinho">
-    </section>
-
-    <section class="cards-container">
+<section class="secao-video">
+    <div class="container">
+        <h2 style="text-align: center; color: #2e7d32;">Conheça o Programa na Prática</h2>
+        <p style="text-align: center;">Assista ao vídeo oficial sobre a metodologia e o impacto do Agrinho no Paraná.</p>
         
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=500" alt="Sustentabilidade">
-            <div class="card-texto">
-                <h3>Sustentabilidade</h3>
-                <p>O Agrinho ensina que cuidar da terra é garantir o alimento de amanhã. O foco é o manejo sustentável e a proteção de nascentes.</p>
-            </div>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/pE5F97C88X0" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
         </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500" alt="Tecnologia">
-            <div class="card-texto">
-                <h3>Tecnologia Digital</h3>
-                <p>A agricultura 4.0 já é realidade. O projeto incentiva o uso de robótica e drones para melhorar a vida no campo.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=500" alt="Educação">
-            <div class="card-texto">
-                <h3>Cidadania</h3>
-                <p>Mais do que plantar, o projeto ensina a colher direitos e deveres, fortalecendo a conexão entre alunos e suas comunidades.</p>
-            </div>
-        </div>
-
-    </section>
-</div>
-
-</body>
-</html>
+    </div>
+</section>
