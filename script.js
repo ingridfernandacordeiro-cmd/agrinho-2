@@ -1,68 +1,66 @@
-// Aguarda o carregamento do DOM
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Variáveis de interação
-    const btnInteragir = document.getElementById('btn-interagir');
-    const inputNome = document.getElementById('input-nome');
-    const mainTitle = document.getElementById('main-title');
-    const themeBtn = document.getElementById('theme-btn');
-    const form = document.getElementById('meu-formulario');
-    const msgSucesso = document.getElementById('mensagem-sucesso');
 
-    // 2. Função de Personalização (JS manipula o texto do DOM)
-    btnInteragir.addEventListener('click', () => {
-        const nome = inputNome.value.trim();
-        
-        if (nome !== "") {
-            // Alteração dinâmica do elemento H1
-            mainTitle.innerText = `Olá, ${nome}! Conecte-se com a Sustentabilidade.`;
-            
-            // Esconde a div de entrada para limpar o visual
-            inputNome.parentElement.style.opacity = '0';
-            setTimeout(() => {
-                inputNome.parentElement.style.display = 'none';
-            }, 500);
-            
-            console.log(`Usuário personalizado: ${nome}`);
-        } else {
-            alert("Por favor, insira seu nome para uma melhor experiência!");
-        }
-    });
+/* Paleta de cores oficial */
+:root {
+    --verde-escuro: #1b5e20;
+    --verde-principal: #2e7d32;
+    --bege-fundo: #f9fbe7;
+}
 
-    // 3. Função Modo Escuro (Manipulação de Classe CSS)
-    themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
-        // Feedback visual no botão
-        if (document.body.classList.contains('dark-mode')) {
-            themeBtn.innerText = "☀️";
-        } else {
-            themeBtn.innerText = "🌑";
-        }
-    });
+body {
+    background-color: var(--bege-fundo);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    color: #333;
+}
 
-    // 4. Manipulação de Formulário Semântico
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Evita recarregar a página
-        
-        const userEmail = document.getElementById('email').value;
-        
-        // Simulação de processamento de informação
-        if (userEmail) {
-            form.style.display = 'none';
-            msgSucesso.classList.remove('hidden');
-            msgSucesso.style.color = '#1b5e20';
-            msgSucesso.style.fontWeight = 'bold';
-        }
-    });
+header {
+    background: var(--verde-escuro);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 5px solid #ffd600; /* Detalhe em amarelo */
+}
 
-    // 5. Scroll Suave para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-});
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.img-fluida {
+    width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.video-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-bottom: 20px;
+}
+
+.video-frame iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 8px;
+}
+
+.calculadora {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+button {
+    background: var(--verde-principal);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
