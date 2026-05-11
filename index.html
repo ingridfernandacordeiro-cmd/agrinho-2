@@ -3,99 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte | Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Projeto Agrinho - Inovação e Saber</title>
+    <style>
+        /* CSS Integrado para facilitar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .secao-info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .secao-info img {
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-texto {
+            padding: 15px;
+        }
+
+        .card-texto h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .secao-info { flex-direction: column; text-align: center; }
+            .secao-info img { width: 100%; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Agro<span>Sustentável</span></div>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#pilares">Pilares</a></li>
-                <li><a href="#biblioteca">Biblioteca</a></li>
-                <li><button id="theme-btn" title="Alternar Modo Escuro">🌓</button></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="inicio" class="hero">
-            <div class="hero-overlay">
-                <h1 id="main-title">Agro Forte: Equilíbrio que Alimenta</h1>
-                <p>A tecnologia brasileira liderando a preservação ambiental no campo.</p>
-                <div class="interactive-box">
-                    <input type="text" id="input-nome" placeholder="Seu nome aqui...">
-                    <button id="btn-interagir">Personalizar Experiência</button>
-                </div>
+<header>
+    <h1>Programa Agrinho</h1>
+    <p>Educação que transforma o campo e a cidade</p>
+</header>
+
+<div class="container">
+    
+    <section class="secao-info">
+        <div class="texto">
+            <h2>O que é o Programa?</h2>
+            <p>O <strong>Agrinho</strong> é o maior programa de responsabilidade social do Sistema FAEP/SENAR-PR. Há mais de 25 anos, ele leva informações sobre saúde, segurança pessoal e ambiental a milhares de crianças no Paraná.</p>
+            <p>O objetivo é formar cidadãos conscientes, que entendam a importância do agronegócio para a economia e o papel fundamental da preservação ambiental para o nosso futuro.</p>
+        </div>
+        <img src="https://www.sistemafaep.org.br/wp-content/uploads/2023/10/Agrinho-2023-Premicao-1.jpg" alt="Premiação Agrinho">
+    </section>
+
+    <section class="cards-container">
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=500" alt="Sustentabilidade">
+            <div class="card-texto">
+                <h3>Sustentabilidade</h3>
+                <p>O Agrinho ensina que cuidar da terra é garantir o alimento de amanhã. O foco é o manejo sustentável e a proteção de nascentes.</p>
             </div>
-        </section>
+        </div>
 
-        <section id="pilares" class="section">
-            <h2 class="section-title">O Triângulo da Sustentabilidade</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Preservação Ativa</h3>
-                    <p>O Código Florestal Brasileiro exige que propriedades rurais mantenham áreas de Reserva Legal. O agro forte protege as nascentes.</p>
-                </div>
-                <div class="card">
-                    <h3>Tecnologia de Precisão</h3>
-                    <p>Drones e sensores reduzem em até 40% o uso de defensivos, aplicando-os apenas onde há necessidade real.</p>
-                </div>
-                <div class="card">
-                    <h3>Segurança Alimentar</h3>
-                    <p>Produzir mais em menos espaço é a chave para evitar o desmatamento e alimentar a população crescente.</p>
-                </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500" alt="Tecnologia">
+            <div class="card-texto">
+                <h3>Tecnologia Digital</h3>
+                <p>A agricultura 4.0 já é realidade. O projeto incentiva o uso de robótica e drones para melhorar a vida no campo.</p>
             </div>
-        </section>
+        </div>
 
-        <section id="biblioteca" class="section bg-light">
-            <h2 class="section-title">Biblioteca do Futuro</h2>
-            <p class="subtitle">Aprofunde seus conhecimentos com fontes oficiais e científicas.</p>
-            
-            <div class="resources-container">
-                <div class="resource-column">
-                    <h3>📑 Artigos e Matérias</h3>
-                    <ul class="link-list">
-                        <li><a href="https://www.embrapa.br/tema-agricultura-sustentavel" target="_blank">Embrapa: Tudo sobre Agricultura Sustentável</a></li>
-                        <li><a href="https://www.cnabrasil.org.br/noticias/agro-sustentavel-brasileiro-e-referencia-mundial" target="_blank">CNA: O Agro Brasileiro como Referência Mundial</a></li>
-                        <li><a href="https://brasilescola.uol.com.br/geografia/agricultura-sustentavel.htm" target="_blank">Brasil Escola: Conceitos de Sustentabilidade no Campo</a></li>
-                    </ul>
-                </div>
-
-                <div class="resource-column">
-                    <h3>🎥 Vídeos e Documentários</h3>
-                    <ul class="link-list">
-                        <li><a href="https://www.youtube.com/watch?v=kY67l0nshZ8" target="_blank">Documentário: O Futuro da Agricultura (YouTube)</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=FjI5jY7Mv-M" target="_blank">Tecnologias que mudaram o Campo - Canal Rural</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=uD5uW6-gQ6M" target="_blank">Embrapa: ILPF (Integração Lavoura-Pecuária-Floresta)</a></li>
-                    </ul>
-                </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=500" alt="Educação">
+            <div class="card-texto">
+                <h3>Cidadania</h3>
+                <p>Mais do que plantar, o projeto ensina a colher direitos e deveres, fortalecendo a conexão entre alunos e suas comunidades.</p>
             </div>
-        </section>
+        </div>
 
-        <section id="contato" class="section">
-            <div class="form-card">
-                <form id="meu-formulario">
-                    <h3>Receba Materiais Educativos</h3>
-                    <div class="form-group">
-                        <label for="email">E-mail Acadêmico/Pessoal</label>
-                        <input type="email" id="email" required placeholder="exemplo@email.com">
-                    </div>
-                    <button type="submit" class="btn-submit">Assinar Boletim Agrinho</button>
-                </form>
-                <div id="mensagem-sucesso" class="hidden">
-                    <p>🎉 <strong>Sucesso!</strong> O guia de Sustentabilidade foi enviado para o seu e-mail.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+    </section>
+</div>
 
-    <footer>
-        <p>&copy; 2026 - Projeto Agro Forte Futuro Sustentável</p>
-        <p><small>Criado com auxílio de: Canva (Imagens), Piskel (Ícones) e Gemini (Suporte em Código).</small></p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
