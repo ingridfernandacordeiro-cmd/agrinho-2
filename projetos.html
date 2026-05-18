@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos e Concursos - Agrinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Concursos Agrinho</h1>
+            <p>Transformando Ideias em Respostas para o Campo</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div style="margin-bottom: 25px;">
+            <a href="index.html" class="btn-voltar">← Voltar para a Página Inicial</a>
+        </div>
+
+        <section class="artigo-principal" style="flex-direction: column; align-items: flex-start;">
+            <h2>Categorias Oficiais e Critérios de Avaliação</h2>
+            <p>Anualmente, o Concurso Agrinho premia os melhores trabalhos desenvolvidos ao longo do ano letivo. A banca examinadora avalia critérios rigorosos como originalidade, aplicabilidade prática na comunidade regional, interdisciplinaridade e o alinhamento com os Objetivos de Desenvolvimento Sustentável (ODS).</p>
+            
+            <table class="tabela-projetos">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Público-Alvo</th>
+                        <th>Abordagem Pedagógica e Foco</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desenho</strong></td>
+                        <td>Educação Infantil e 1º Ano</td>
+                        <td>Estímulo à percepção visual e artística das crianças sobre a fauna, a flora e o trabalho do produtor rural.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Redação</strong></td>
+                        <td>2º ao 9º Ano e Ensino Médio</td>
+                        <td>Desenvolvimento de textos dissertativos, poemas e crônicas abordando a preservação hídrica e a sucessão familiar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Robótica / Inovação</strong></td>
+                        <td>Ensino Fundamental II e Médio</td>
+                        <td>Prototipagem com circuitos integrados e programação para resolver problemas como irrigação inteligente ou automação de estufas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Relato Pedagógico</strong></td>
+                        <td>Professores da Rede de Ensino</td>
+                        <td>Monografias e portfólios que registram o impacto social e a metodologia de projetos científicos aplicados com as turmas.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="dicas-sessao" style="text-align: left;">
+            <h3>Deseja inscrever sua escola ou tirar dúvidas?</h3>
+            <p style="color: #555; margin-bottom: 20px;">Se você é educador, estudante ou gestor escolar, preencha o formulário institucional abaixo. Nossa equipe pedagógica enviará o kit digital completo contendo os manuais de orientação, materiais de apoio para as aulas e o regulamento atualizado dos prêmios.</p>
+            
+            <form id="form-contato" class="form-agrinho">
+                <div class="form-grupo">
+                    <label for="nome">Nome Completo do Responsável:</label>
+                    <input type="text" id="nome" required placeholder="Digite o nome completo">
+                </div>
+                
+                <div class="form-grupo">
+                    <label for="email">E-mail Institucional ou Pessoal:</label>
+                    <input type="email" id="email" required placeholder="exemplo@escola.com.br">
+                </div>
+                
+                <div class="form-grupo">
+                    <label for="perfil">Vínculo com a Instituição:</label>
+                    <select id="perfil">
+                        <option value="professor">Professor / Educador Regente</option>
+                        <option value="diretor">Diretor / Coordenador Pedagógico</option>
+                        <option value="aluno">Aluno Pesquisador</option>
+                        <option value="pais">Pai, Mãe ou Responsável Legal</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="mensagem">Breve descrição do projeto ou dúvida (Opcional):</label>
+                    <textarea id="mensagem" rows="4" placeholder="Conte-nos um pouco sobre a ideia ou dúvida da sua turma..." style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+                
+                <button type="submit" id="btn-dica" style="margin-top: 10px; align-self: flex-start;">Solicitar Kit Regulamento</button>
+            </form>
+            
+            <p id="msg-sucesso" style="color: var(--verde-escuro); font-weight: bold; margin-top: 20px; display: none;">✅ Solicitação recebida! Em instantes você receberá o material pedagógico e o regulamento em sua caixa de entrada.</p>
+        </section>
+    </main>
+
+    <script>
+        // Lógica local para controle do formulário
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('msg-sucesso').style.display = 'block';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
