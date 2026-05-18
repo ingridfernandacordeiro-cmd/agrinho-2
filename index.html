@@ -1,42 +1,97 @@
-<main class="container">
-        <section class="artigo-principal">
-            <div class="texto">
-                <h2>O que é o Agrinho?</h2>
-                <p>O <strong>Agrinho</strong> é o maior programa de responsabilidade social do Sistema FAEP/SENAR-PR. Atua na formação de cidadãos conscientes, integrando alunos e professores em projetos de pesquisa sobre o meio rural, sustentabilidade e inovação tecnológica.</p>
-                <p><em>Fonte oficial: <a href="https://www.sistemafaep.org.br" target="_blank">Sistema FAEP</a></em></p>
-            </div>
-            <div class="imagem">
-                <img src="https://www.sistemafaep.org.br/wp-content/uploads/2023/10/Agrinho-2023-Premicao-1.jpg" alt="Vencedores do Agrinho">
-            </div>
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos e Concursos - Agrinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Concursos Agrinho 2026</h1>
+            <p>Transformando Ideias em Respostas para o Campo</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="margin-bottom: 20px;">
+            <a href="index.html" style="color: var(--verde-agrinho); text-decoration: none; font-weight: bold;">← Voltar ao Início</a>
+        </div>
+
+        <section class="artigo-principal" style="flex-direction: column; align-items: flex-start;">
+            <h2>Categorias de Participação</h2>
+            <p>O Programa Agrinho premia alunos e professores em diversas modalidades. Confira as principais:</p>
+            
+            <table class="tabela-projetos">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Público-Alvo</th>
+                        <th>Foco do Trabalho</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desenho</strong></td>
+                        <td>Educação Infantil e 1º Ano</td>
+                        <td>Expressão artística sobre a vida no campo.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Redação</strong></td>
+                        <td>2º ao 9º Ano e Ensino Médio</td>
+                        <td>Textos dissertativos e crônicas sobre sustentabilidade.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Robótica</strong></td>
+                        <td>Ensino Fundamental II e Médio</td>
+                        <td>Prototipagem de soluções reais para o agronegócio.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Relato Pedagógico</strong></td>
+                        <td>Professores</td>
+                        <td>Projetos inovadores aplicados em sala de aula.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <section class="pilares-sessao">
-            <div class="pilar-card">
-                <h3>🌱 Sustentabilidade</h3>
-                <p>Práticas que protegem o meio ambiente, conservam o solo e garantem o futuro das próximas gerações no campo.</p>
-            </div>
-            <div class="pilar-card">
-                <h3>⚖️ Cidadania</h3>
-                <p>Estudo dos direitos e deveres, aproximando a realidade do campo e da cidade para uma sociedade mais justa.</p>
-            </div>
-            <div class="pilar-card">
-                <h3>🚀 Inovação</h3>
-                <p>Introdução de novas tecnologias, robótica e pensamento crítico nas escolas públicas e particulares.</p>
-            </div>
-        </section>
-
-        <section class="dicas-sessao">
-            <h3>Espaço Interativo: Dica do Dia</h3>
-            <div class="dica-box">
-                <p id="texto-dica">Clique no botão abaixo para descobrir um fato ou dica sobre o campo e o programa!</p>
-            </div>
-            <button id="btn-dica">Nova Dica</button>
-        </section>
-
-        <section class="video-sessao">
-            <h3>Vídeo Institucional</h3>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/PWbbjtXEpAI" frameborder="0" allowfullscreen></iframe>
-            </div>
+        <section class="dicas-sessao" style="text-align: left;">
+            <h3>Gostaria de participar ou tirar dúvidas?</h3>
+            <p>Preencha os campos abaixo para receber o regulamento completo no seu e-mail.</p>
+            
+            <form id="form-contato" class="form-agrinho">
+                <div class="form-grupo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Digite seu nome">
+                </div>
+                <div class="form-grupo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required placeholder="seuemail@escola.com">
+                </div>
+                <div class="form-grupo">
+                    <label for="perfil">Você é:</label>
+                    <select id="perfil">
+                        <option value="aluno">Aluno</option>
+                        <option value="professor">Professor / Educador</option>
+                        <option value="pais">Pai / Responsável</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <button type="submit" id="btn-dica" style="margin-top: 10px;">Enviar Inscrição</button>
+            </form>
+            <p id="msg-sucesso" style="color: var(--verde-escuro); font-weight: bold; margin-top: 15px; display: none;">✅ Obrigado pelo interesse! O regulamento foi enviado para o seu e-mail.</p>
         </section>
     </main>
+
+    <script>
+        // Lógica simples para o formulário nesta página
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('msg-sucesso').style.display = 'block';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
