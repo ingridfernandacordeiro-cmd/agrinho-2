@@ -1,193 +1,157 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="pt-pt">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mídia Interativa Completa</title>
-    
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f3;
-            color: #333;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1 {
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-        }
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        h2 {
-            margin-bottom: 15px;
-            color: #34495e;
-            font-size: 1.4rem;
-        }
-        /* Estilo da Imagem */
-        .midia-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .midia-img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-        /* Estilo do Vídeo e Controles */
-        .video-container {
-            position: relative;
-            display: inline-block;
-            max-width: 100%;
-        }
-        video {
-            max-width: 100%;
-            border-radius: 8px;
-            display: block;
-        }
-        .controles {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        button:hover {
-            background-color: #2980b9;
-        }
-        button.ativo {
-            background-color: #e74c3c;
-        }
-        button.ativo:hover {
-            background-color: #c0392b;
-        }
-        .status-txt {
-            margin-top: 10px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #7f8c8d;
-            height: 20px;
-        }
-    </style>
+
+    <title>Portal Oficial Agrinho - Educação e Sustentabilidade</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-    <h1>Painel de Controle de Mídia</h1>
 
-    <div class="container">
 
-        <div class="card">
-            <h2>Galeria Dinâmica (Clique na Imagem)</h2>
-            <img id="galeria" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="Gatinho fofo" class="midia-img">
-            <p id="legendaImg" class="status-txt">Clique para mudar a foto</p>
+    <header>
+
+        <div class="container">
+
+            <h1>Programa Agrinho</h1>
+
+            <p>Educação, Cidadania e Sustentabilidade no Campo</p>
+
         </div>
 
-        <div class="card">
-            <h2>Player de Vídeo Customizado</h2>
-            <div class="video-container">
-                <video id="playerVideo" src="https://www.w3schools.com/html/mov_bbb.mp4" loop></video>
-            </div>
-            <div class="controles">
-                <button id="btnPlay">Play ▶</button>
-                <button id="btnMute">Mutar 🔇</button>
-            </div>
-            <p id="statusVideo" class="status-txt">Vídeo pausado</p>
-        </div>
+    </header>
 
-    </div>
 
-    <script>
-        // --- GERENCIAMENTO DA IMAGEM ---
-        const imgElemento = document.getElementById('galeria');
-        const legendaImg = document.getElementById('legendaImg');
+
+    <main class="container">
+
         
-        // Lista de imagens para alternar no clique
-        const listaImagens = [
-            "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba", // Gato
-            "https://images.unsplash.com/photo-1543466835-00a7907e9de1"  // Cachorro
-        ];
-        let indiceAtual = 0;
 
-        imgElemento.addEventListener('click', () => {
-            // Alterna o índice entre 0 e 1
-            indiceAtual = indiceAtual === 0 ? 1 : 0;
-            imgElemento.src = listaImagens[indiceAtual];
-            
-            // Atualiza o texto descritivo
-            if (indiceAtual === 0) {
-                imgElemento.alt = "Gatinho fofo";
-                legendaImg.innerText = "Você voltou para o gatinho! 🐱";
-            } else {
-                imgElemento.alt = "Cachorrinho feliz";
-                legendaImg.innerText = "Você mudou para o cachorrinho! 🐶";
-            }
-        });
+        <section class="artigo-principal">
 
-        // --- GERENCIAMENTO DO VÍDEO ---
-        const video = document.getElementById('playerVideo');
-        const btnPlay = document.getElementById('btnPlay');
-        const btnMute = document.getElementById('btnMute');
-        const statusVideo = document.getElementById('statusVideo');
+            <div class="texto">
 
-        // Função de Play / Pause
-        btnPlay.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                btnPlay.innerText = "Pause ⏸";
-                btnPlay.classList.add('ativo');
-                statusVideo.innerText = "Reproduzindo vídeo...";
-                statusVideo.style.color = "#2ecc71";
-            } else {
-                video.pause();
-                btnPlay.innerText = "Play ▶";
-                btnPlay.classList.remove('ativo');
-                statusVideo.innerText = "Vídeo pausado";
-                statusVideo.style.color = "#7f8c8d";
-            }
-        });
+                <h2>O que é o Agrinho?</h2>
 
-        // Função de Mute / Unmute
-        btnMute.addEventListener('click', () => {
-            if (video.muted) {
-                video.muted = false;
-                btnMute.innerText = "Mutar 🔇";
-                btnMute.classList.remove('ativo');
-            } else {
-                video.muted = true;
-                btnMute.innerText = "Tirar Mute 🔊";
-                btnMute.classList.add('ativo');
-            }
-        });
-    </script>
+                <p>O <strong>Agrinho</strong> consolidou-se como o maior programa de responsabilidade social do Sistema FAEP/SENAR-PR. Há mais de duas décadas, a iniciativa atua diretamente na formação de cidadãos conscientes, integrando centenas de milhares de alunos e professores da rede pública e privada em projetos de pesquisa científica, inovação tecnológica e preservação ambiental.</p>
+
+                <p>O grande diferencial do programa é levar o debate sobre o meio rural para dentro das salas de aula urbanas e vice-versa, quebrando barreiras culturais e mostrando como o agronegócio moderno alia produtividade com respeito absoluto aos ecossistemas.</p>
+
+                
+
+                <p style="margin-top: 25px;">
+
+                    <strong>Quer fazer parte dessa transformação?</strong><br>
+
+                    <a href="projetos.html" class="btn-link">Ver Categorias e Inscrições →</a>
+
+                </p>
+
+                
+
+                <p style="margin-top: 15px;"><small><em>Fonte oficial: <a href="https://www.sistemafaep.org.br" target="_blank">Sistema FAEP</a></em></small></p>
+
+            </div>
+
+            <div class="imagem">
+
+                <img src="https://www.sistemafaep.org.br/wp-content/uploads/2023/10/Agrinho-2023-Premicao-1.jpg" alt="Vencedores do Agrinho na grande cerimônia de premiação">
+
+            </div>
+
+        </section>
+
+
+
+        <section class="pilares-sessao">
+
+            <div class="pilar-card">
+
+                <h3>🌱 Sustentabilidade</h3>
+
+                <p>O programa incentiva o estudo prático da conservação ambiental. Alunos aprendem sobre a proteção de microbacias hidrográficas, manejo correto do solo para evitar erosões, compostagem orgânica e a importância das florestas plantadas e nativas para o equilíbrio climático regional.</p>
+
+            </div>
+
+            <div class="pilar-card">
+
+                <h3>⚖️ Cidadania</h3>
+
+                <p>A ética e a responsabilidade social são debatidas de forma transversal. O foco é conectar os direitos e deveres dos cidadãos do campo aos da cidade, valorizando a agricultura familiar, a segurança alimentar e o papel do jovem como agente transformador de sua própria comunidade local.</p>
+
+            </div>
+
+            <div class="pilar-card">
+
+                <h3>🚀 Inovação</h3>
+
+                <p>O agronegócio atual é tecnológico. Por isso, o Agrinho fomenta o pensamento computacional e a pesquisa de ponta. As escolas debatem desde a introdução de drones de pulverização e sensores agrícolas até projetos escolares focados em robótica e automação de baixo custo.</p>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="dicas-sessao">
+
+            <h2>Espaço Interativo: Conhecimento Agro</h2>
+
+            <p>O desenvolvimento rural caminha lado a lado com a ciência. Clique no botão abaixo para explorar fatos reais, dicas ambientais e dados estatísticos consolidados sobre o Programa Agrinho no Paraná.</p>
+
+            <div class="dica-box">
+
+                <p id="texto-dica">Clique no botão abaixo para gerar uma nova informação rural!</p>
+
+            </div>
+
+            <button id="btn-dica">Gerar Fato Aleatório</button>
+
+        </section>
+
+
+
+        <section class="video-sessao">
+
+            <h3>Vídeo Institucional: O Impacto na Educação</h3>
+
+            <p style="margin-bottom: 20px; color: #555;">Assista ao documentário oficial e conheça relatos emocionantes de professores que mudaram a realidade de suas escolas e conquistaram o reconhecimento estadual através dos projetos do Sistema FAEP/SENAR-PR.</p>
+
+            <div class="video-container">
+
+                <iframe src="https://www.youtube.com/embed/PWbbjtXEpAI" frameborder="0" allowfullscreen></iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        <div class="container" style="text-align: center; color: #777; font-size: 0.9rem; margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd;">
+
+            <p>&copy; 2026 Portal Temático Agrinho. Desenvolvido para fins educacionais.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
 
 </body>
-</html>
+
+</html> 
