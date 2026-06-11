@@ -1,88 +1,76 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mídias com JavaScript</title>
-    <style>
-        /* Um pouco de estilo para organizar a página */
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
-        .bloco { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        button { padding: 10px 15px; font-size: 14px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 5px; }
-        button:hover { background-color: #0056b3; }
-    </style>
-</head>
-<body>
+/**
+ * Portal Agrinho 2026 - Scripts de Interatividade e Controle de Dados
+ */
 
-    <h1>Interação com Imagens e Vídeos (HTML + JS)</h1>
+// Banco de dados expandido com fatos reais sobre sustentabilidade e o programa
+const dicas = [
+    "A agricultura sustentável baseia-se no plantio direto para evitar a erosão e preservar as nascentes de água.",
+    "O uso programado de drones no monitoramento do campo reduz em até 30% o desperdício de insumos agrícolas.",
+    "O Programa Agrinho mobiliza anualmente mais de 800 mil alunos e 50 mil professores no Estado do Paraná.",
+    "Práticas simples de compostagem orgânica nas escolas reduzem o lixo urbano e geram adubo de alta qualidade.",
+    "Criado há mais de 25 anos, o Agrinho é pioneiro em levar a educação ambiental de forma integrada e transversal.",
+    "A rotação sistemática de culturas quebra o ciclo de pragas de forma natural, diminuindo a dependência de defensivos.",
+    "A captação e uso de energia solar em propriedades rurais reduz emissões de carbono e barateia o custo da produção.",
+    "A agricultura familiar responde pelo cultivo de cerca de 70% dos alimentos frescos consumidos diariamente no Brasil."
+];
 
-    <div class="bloco">
-        <h2>1. Interação com Imagem</h2>
-        <p>Passe o mouse ou clique na imagem abaixo:</p>
+/**
+ * Sorteia uma dica do banco de dados e atualiza dinamicamente o painel HTML
+ */
+function mostrarDicaAleatoria() {
+    const indice = Math.floor(Math.random() * dicas.length);
+    
+    // Captura o parágrafo pelo ID único de destino
+    const elementoTexto = document.getElementById("texto-dica");
+    
+    if (elementoTexto) {
+        // Altera o conteúdo sem recarregar a página e sem travar o navegador
+        elementoTexto.textContent = dicas[indice];
+        console.log("Dica injetada via DOM com sucesso: [" + indice + "]");
+    } else {
+        console.error("Erro: O elemento '#texto-dica' não foi localizado na árvore DOM.");
+    }
+}
+
+/**
+ * Controla o envio do formulário de inscrição de forma assíncrona/simulada
+ * @param {Event} event - O evento de submit do formulário
+ */
+function gerenciarEnvioFormulario(event) {
+    event.preventDefault(); // Impede o recarregamento da página
+    
+    const msgSucesso = document.getElementById('msg-sucesso');
+    const formulario = event.target;
+
+    if (msgSucesso) {
+        msgSucesso.style.display = 'block';
+        console.log("Formulário enviado com sucesso. Kit Regulamento solicitado.");
         
-        <img id="minhaImagem" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="Gatinho" width="300" style="cursor: pointer; transition: 0.3s;">
+        // Limpa os campos do formulário após o envio bem-sucedido
+        formulario.reset();
         
-        <p id="textoMensagem" style="font-weight: bold; color: green;"></p>
-    </div>
+        // Opcional: Oculta a mensagem de sucesso após 7 segundos
+        setTimeout(() => {
+            msgSucesso.style.display = 'none';
+        }, 7000);
+    }
+}
 
-    <div class="bloco">
-        <h2>2. Controle de Vídeo por JavaScript</h2>
-        
-        <video id="meuVideo" width="400" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
-        
-        <br><br>
-        <button id="btnPlayPause">Dar Play ▶</button>
-        <button id="btnMutar">Mudar Som 🔇</button>
-    </div>
+/**
+ * Escuta o carregamento estrutural do documento para ligar os gatilhos com segurança
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Portal Agrinho carregado. Inicializando motores de eventos JavaScript...");
+    
+    // --- GATILHO 1: Botão de Dicas (Página Inicial) ---
+    const botaoDica = document.getElementById("btn-dica");
+    if (botaoDica) {
+        botaoDica.addEventListener("click", mostrarDicaAleatoria);
+    }
 
-    <script>
-        // --- 1. SCRIPT DA IMAGEM ---
-        const imagem = document.getElementById('minhaImagem');
-        const mensagem = document.getElementById('textoMensagem');
-
-        // Evento de clique na imagem
-        imagem.addEventListener('click', function() {
-            mensagem.innerText = "Você clicou no gatinho! Miau! 🐾";
-        });
-
-        // Efeito visual quando o mouse passa por cima (Hover)
-        imagem.addEventListener('mouseenter', function() {
-            imagem.style.transform = "scale(1.05)"; // Aumenta um pouco de tamanho
-        });
-
-        // Efeito visual quando o mouse sai de cima
-        imagem.addEventListener('mouseleave', function() {
-            imagem.style.transform = "scale(1)"; // Volta ao tamanho normal
-        });
-
-
-        // --- 2. SCRIPT DO VÍDEO ---
-        const video = document.getElementById('meuVideo');
-        const btnPlayPause = document.getElementById('btnPlayPause');
-        const btnMutar = document.getElementById('btnMutar');
-
-        // Função para dar Play e Pause
-        btnPlayPause.addEventListener('click', function() {
-            if (video.paused) {
-                video.play();
-                btnPlayPause.innerText = "Pausar ⏸";
-            } else {
-                video.pause();
-                btnPlayPause.innerText = "Dar Play ▶";
-            }
-        });
-
-        // Função para Mutar e Desmutar o áudio
-        btnMutar.addEventListener('click', function() {
-            if (video.muted) {
-                video.muted = false;
-                btnMutar.innerText = "Mudar Som 🔇";
-            } else {
-                video.muted = true;
-                btnMutar.innerText = "Ativar Som 🔊";
-            }
-        });
-    </script>
-
-</body>
-</html>
+    // --- GATILHO 2: Formulário de Contato (Página de Concursos) ---
+    const formularioContato = document.getElementById('form-contato');
+    if (formularioContato) {
+        formularioContato.addEventListener('submit', gerenciarEnvioFormulario);
+    }
+});
